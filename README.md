@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -7,7 +6,14 @@
 	<body>
 		
 		
-		
-		<h1>web移动</h1>
+		<style type="text/css">
+			.box{
+				background-color: red;
+			}
+			
+			
+		</style>
+		<div class="box">web移动</div>
 	</body>
 </html>
+
