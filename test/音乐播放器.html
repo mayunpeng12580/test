@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>音乐播放器</title>
+		
+		<script type="text/javascript" src="js/jquery-2.1.0.js"></script>
+		<link href="css/video-js.min.css" rel="stylesheet"/>
+		
+		
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box{
+				width: 500px;
+				height: 150px;
+				background-color: #DEB887;
+				padding-top: 40px;
+				position: relative;
+				margin: 20px auto;
+			}
+			
+			.bgd img{
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				/*background-image: url(img/kuaizixiongdi.jpeg);*/
+				margin-left: 30px;
+				-webkit-animation-name: run;
+				-webkit-animation-duration: 3s;
+				-webkit-animation-iteration-count: infinite;
+				-webkit-animation-timing-function: linear;
+				-webkit-animation-delay: 0s;
+				-webkit-animation-play-state: paused;
+			}
+			
+			@-webkit-keyframes run{
+				from{
+					-webkit-transform: rotate(0deg);
+				}
+				to{
+					-webkit-transform: rotate(360deg);
+				}
+			}
+			
+			.end{
+				position: absolute;
+				top: 75px;
+				left: 350px;
+			}
+			
+			.left{
+				width: 20px;
+				height: 20px;
+				background-image: url(img/ico_btn_player.png);
+				background-position: -60px 0;
+				/*margin-top: 10px;*/
+			}
+			
+			
+			.right{
+				width: 20px;
+				height: 20px;
+				background-image: url(img/ico_btn_player.png);
+				background-position: -60px -30px;
+				
+			}
+			
+			.star{
+				width: 25px;
+				height: 25px;
+				background-image: url(img/ico_btn_player.png);
+				background-position: -60px -60px;
+				
+			}
+			
+			.stop{
+				width: 25px;
+				height: 25px;
+				background-image: url(img/ico_btn_player.png);
+				background-position: -60px -90px;
+				
+			}
+			
+			
+			.center{
+				overflow: hidden;
+				zoom: 1;
+				position: absolute;
+				top: 70px;
+				left: 150px;
+				
+			}
+			
+			.center div{
+				float: left;
+				margin: 15px;
+				
+			}
+			
+			.center div:nth-of-type(2){
+				margin: 12px;
+			}
+			
+			p{
+				width: 100px;
+				text-align: right;
+				margin: 5px;
+			}
+			
+		</style>
+		
+		
+		
+	</head>
+	<body>
+		<div class="box">
+			<div class="bgd">
+				<img src="img/kuaizixiongdi.jpeg" class="image"/>
+			</div>
+			
+			<div class="center">
+				<div class="left"></div>
+				<div class="star"></div>
+				<div class="right"></div>
+			</div>
+			
+			<div class="end">
+				<input type="range" min="0" max="1" value="0" id="aa"/>
+				<p>00:00/02:17</p>
+			</div>
+			<audio src="media/小苹果.mp3"  id="music"></audio>
+		</div>
+		
+		<script type="text/javascript">
+			var mp3=document.getElementById("music")
+			var star=document.getElementsByClassName("star")
+			var img=document.getElementsByClassName("image")[0]
+			var a=$("#aa").val()
+			
+			console.log(star);
+			star[0].onclick=function(){
+				if(mp3.paused){
+					mp3.play();
+					console.log("1232");
+					this.className="stop";
+					img.style.webkitAnimationPlayState="running";
+				}else{
+					mp3.pause();
+					console.log("5687");
+					this.className="star";
+					img.style.webkitAnimationPlayState="paused";
+					
+				}
+			
+			}
+			
+			setTimeout(function(){
+				if(mp3.paused){
+					a=a++;
+				}
+				return a
+			},1000)
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			.left{
+				float: left;
+			}
+			
+			.right{
+				float: right;
+			}
+			
+			.clear{
+				overflow: hidden;
+				zoom: 1;
+			}
+			
+			.all{
+				width: 1000px;
+				margin: 10px auto;
+			}
+			
+			.top{
+				width: 480px;
+				height: 50px;
+				background-color: red;
+			}
+			
+			.nav{
+				width: 1000px;
+				height: 200px;
+				background-color: #6495ED;
+				margin-top: 20px;
+			}
+			
+			.center{
+				width: 300px;
+				height: 250px;
+				background-color: #DEB887;
+				margin-top: 20px;
+			}
+			
+			.center:nth-of-type(2){
+				margin: 20px 50px;
+			}
+			
+			.end{
+				width: 200px;
+				height: 50px;
+				background-color: brown;
+			}
+			
+			.end:nth-of-type(2){
+				margin: 0px 65px;
+			}
+			
+			.end:nth-of-type(3){
+				margin-right: 70px;
+			}
+			
+			
+			@media only screen and (max-width: 1024px) {
+				.top{
+					width: 100%;
+					margin-bottom: 10px;
+				}
+				
+				.center{
+					width: 100%;
+					margin-bottom: 10px;
+				}
+				
+				.center:nth-of-type(2){
+					margin: 10px 0 10px 0;
+				}
+				
+				.end{
+					width: 45%;
+				}
+				
+				.end:nth-of-type(2){
+					margin: 0px 0 0 10%;
+				}
+				
+				.end:nth-of-type(3){
+					margin: 20px 10% 0 0;
+					width: 45%;
+				}
+				
+				.end:nth-of-type(4){
+					width: 45%;
+					margin: 20px 0 0 0;
+					
+				}
+			}
+			
+			
+			@media only screen and (max-width: 768px) {
+				.end{
+					width: 100%;
+					margin: 10px 0 0 0;
+				}
+				
+				.all{
+					width: 100%;
+				}
+				
+				.end:nth-of-type(2){
+					width: 100%;
+					margin: 10px 0 0 0;
+				}
+			
+				.end:nth-of-type(3){
+					width: 100%;
+					margin: 10px 0 0 0;
+				}
+				
+				.end:nth-of-type(4){
+					width: 100%;
+					margin: 10px 0 0 0;
+				}
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		<div class="all">
+			<div class="clear">
+				<div class="top left"></div>
+				<div class="top right"></div>
+			</div>
+			<div class="nav"></div>
+			<div class="clear">
+				<div class="center left"></div>
+				<div class="center left"></div>
+				<div class="center left"></div>
+			</div>
+			<div class="clear">
+				<div class="end left"></div>
+				<div class="end left"></div>
+				<div class="end left"></div>
+				<div class="end left"></div>
+			</div>
+			
+			
+		</div>
+		
+		
+	</body>
+</html>
